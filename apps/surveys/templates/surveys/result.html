@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'surveys/css/bootstrap.min.css' %}">
+    <title>Survey Result</title>
+    <style>
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 card">
+            <div class="row">
+                <p class="title col-6">Submitted Info</p>
+            </div>
+            <dir class="row">
+                <p class="col-6">Name:</p>
+                <p class="col-6">{{ request.session.name }}</p>
+            </dir>
+            <dir class="row">
+                <p class="col-6">Dojo Location:</p>
+                <p class="col-6">{{ request.session.location }}</p>
+            </dir>
+            <dir class="row">
+                <p class="col-6">Favorite Language:</p>
+                <p class="col-6">{{ request.session.language }}</p>
+            </dir>
+            <dir class="row">
+                <p class="col-6">Comment:</p>
+                <p class="col-6">{{ request.session.comment }}</p>
+            </dir>
+            <br>
+            <dir class="row">
+                    <p class="col-6"></p>
+                    <button type="button" class="col-4" onclick="window.location.href='/'">Go Back</button>
+                    <p class="col-2"></p>
+                </dir>
+            </div>
+        <div class="col-4"></div>
+    </div>
+    <script type="text/javascript" src="{% static 'surveys/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'surveys/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'surveys/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
